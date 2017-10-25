@@ -1,0 +1,11 @@
+/sublime-gulp.log
+/.sublime-gulp.cache
+node_modules
+bower_components
+
+.gulp
+Project
+libs
+info
+/project.sublime-project
+/project.sublime-workspace

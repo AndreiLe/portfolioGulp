@@ -1,0 +1,66 @@
+.main-section
+  padding: 30px 0 130px
+  &--dark
+    @extend .main-section
+    background-color: #eee
+  &-h2
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Courier New", Courier, monospace;
+    &:before
+      content: '';
+      width: 134px;
+      height: 6px;
+      position: absolute;
+      background-color: red;
+      margin-left: -145px;
+      margin-top: 36px;
+      border-radius: 3px;
+      right: 0;
+    &--sub
+      max-width: 600px;
+      text-align: left;
+      margin: 0 auto 75px;
+      padding: 0 10px;
+      font-size: 20px;
+
+.tile
+  height: 150px;
+  background-color: #eee;
+  text-align: center;
+  box-sizing: border-box
+  @extend .col-md-2
+  &-2
+    @extend .tile
+    @extend .col-md-4
+  img
+    height: 100%
+    padding: 10px 0
+    box-sizing: border-box
+  &--point
+    text-align: center
+    height: 150px
+    background-color: #042e8f
+    background-image: url(/img/bg-header-home.jpg)  
+    @extend .col-md-4
+    span
+      font-family: 'Permanent Marker', cursive
+      text-align: center
+      color: #f32a16
+      font-size: 88px
+      line-height: 139px
+      transform: rotate(-8deg)
+      text-shadow: 1px 1px 2px black, 0 0 16px red
+      display: inline-block
+    &-2
+      @extend .tile--point
+      height: 300px
+      span
+        line-height: 280px
+
+    @extend .col-md-4
+  &-area
+    /*  */
+
+

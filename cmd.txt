@@ -1,0 +1,5 @@
+#go to work dierectory
+cd /d work directory
+#load all node_modules
+#check changes, need change package json
+npm install

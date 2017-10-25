@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@import "../assets/css/normalize"
+@import "fonts"
+@import "bootstrap-variables"
+@import "../assets/css/bootstrap"
+@import "../assets/css/animate"
+
+* 
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+
+html
+  width: 100%
+  height: 100%
+  box-sizing: content-box
+
+body
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  overflow-x: hidden
+  font-family: "Open Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
+  color: #333
+  min-height: 2000px
+
+a, a:hover, a:active, a:focus
+  text-transform: none
+  text-decoration: none
+  color: #000
+
+.fixmargin
+  &:before 
+    content: "";
+    overflow: hidden; // обязательно!
+    display: block;
+  &:after 
+    content: "";
+    overflow: hidden; // обязательно!
+    display: block;
+
+.delay-0s0
+  opacity: 0 !important
+  animation-delay: 0.0s;
+.delay-1s0
+  opacity: 0 !important
+  animation-delay: 1s;
+.delay-1s6
+  opacity: 0 !important
+  animation-delay: 1.6s;
+
+.visible
+  opacity: 1 !important
+
+.chevron-down
+  margin-top: -65px;
+  margin-bottom: 26px;
+  text-align: center;
+  position: relative;
+  @extend .delay-0s0,.infinite
+  animation-duration: 3s;
+
+
+@media (max-width: 480px)
+  .col-full
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left
+    width: 100%
+
+@media only screen and (min-width : 992px)
+  .col-md-25
+    float: left
+    width: 20%
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+//all pages
+@import "blocks/header/_style.sass"
+@import "blocks/home/_style.sass"
+@import "blocks/footer/_style.sass"
+
+//all helpers for site
+@import "helpers/_media.sass"
+
+//show page
+body 
+  opacity:1 !important
