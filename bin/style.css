@@ -2373,7 +2373,9 @@ a, a:hover, a:active, a:focus {
     font-size: 60px;
     text-align: center;
     margin-bottom: 20px;
-    font-family: "Courier New", Courier, monospace; }
+    font-family: "Courier New", Courier, monospace;
+    position: relative;
+    z-index: 1; }
     .main-section-h2:before {
       content: '';
       width: 134px;

@@ -9,3 +9,5 @@ libs
 info
 /project.sublime-project
 /project.sublime-workspace
+/bin/style.css
+/bin/index.html

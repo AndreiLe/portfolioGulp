@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
 sass = require('gulp-sass'),
 autoprefixer = require('gulp-autoprefixer'),
-minifycss = require('gulp-minify-css'),
+cleanCSS = require('gulp-clean-css'),
 rename = require('gulp-rename'),
 fileinclude = require('gulp-file-include'),
 plumber = require('gulp-plumber'),
@@ -46,7 +46,7 @@ gulp.task('sass-main', function () {
     includePaths: [bourbon.includePaths, 'src/helpers/', 'assets/css/']
   }).on('error', sass.logError))
   // .pipe(rename({suffix: '.min', prefix : ''}))
-  // .pipe(minifycss())
+  // .pipe(cleanCSS())
   .pipe(plumber.stop())
   .pipe(gulp.dest('bin/'))
   .pipe(browserSync.stream());
