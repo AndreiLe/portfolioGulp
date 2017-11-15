@@ -8,7 +8,8 @@ plumber = require('gulp-plumber'),
 bourbon = require('node-bourbon'),
 uglify = require('gulp-uglify'),
 browserSync = require('browser-sync').create(),
-tingpng = require('gulp-tinypng');
+tingpng = require('gulp-tinypng'),
+htmlmin = require('gulp-htmlmin');
 
 
 gulp.task('html-include', function() {
@@ -17,6 +18,10 @@ gulp.task('html-include', function() {
     prefix: '@@',
     basepath: '@file'
   }))
+  .pipe(htmlmin({
+        collapseWhitespace: true,
+        ignoreCustomFragments: [ /<%[\s\S]*?%>/, /<\?[=|php]?[\s\S]*?\?>/ ]
+      }))
   .on('error', function (err) {
     console.log('=======================================html-include ERROR=======================================');
     console.log(err.message);
@@ -30,7 +35,8 @@ gulp.task('jscomm-include', function() {
     prefix: '@@',
     basepath: '@file'
   }))
-  // .pipe(uglify())
+  .pipe(rename({suffix: '.min', prefix : ''}))
+  .pipe(uglify())
   .on('error', function (err) {
     console.log('=======================================js-include ERROR=======================================');
     console.log(err.message);
@@ -45,8 +51,8 @@ gulp.task('sass-main', function () {
     errLogToConsole: true,
     includePaths: [bourbon.includePaths, 'src/helpers/', 'assets/css/']
   }).on('error', sass.logError))
-  // .pipe(rename({suffix: '.min', prefix : ''}))
-  // .pipe(cleanCSS())
+  .pipe(rename({suffix: '.min', prefix : ''}))
+  .pipe(cleanCSS())
   .pipe(plumber.stop())
   .pipe(gulp.dest('bin/'))
   .pipe(browserSync.stream());

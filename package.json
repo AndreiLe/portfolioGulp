@@ -16,6 +16,7 @@
     "gulp-clean-css": "^3.9.0",
     "gulp-express": "^0.3.5",
     "gulp-file-include": "^0.13.7",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-mocha": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-real-favicon": "^0.2.2",
