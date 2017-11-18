@@ -2,9 +2,13 @@
 @@include('../assets/js/jquery-3.2.1.js')
 //viewportchecker.js
 @@include('../assets/js/jquery.viewportchecker.js')
+//blazy.min.js
+@@include('../assets/js/blazy.min.js')
 
 //common.js
 ;(function() {
+
+  new Blazy();
 
   //smooth scroll to id
   $(function() {
