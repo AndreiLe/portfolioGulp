@@ -10,5 +10,6 @@ info
 /project.sublime-project
 /project.sublime-workspace
 /bin/style.css
+/bin/style.min.css
 /bin/index.html
 /bin/js/common.min.js
