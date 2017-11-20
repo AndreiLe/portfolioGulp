@@ -1,10 +1,10 @@
 .main-section
-  padding: 40px 0 130px
+  padding: 40px 0 190px
   width: 100%
   position: relative
   &--dark
-    background-color: #eee
-    padding: 0
+    padding-bottom: 40px;
+    margin-bottom: 200px;
     &:before
       content: '';
       display: block;
@@ -51,7 +51,7 @@
     &__sub
       max-width: 560px;
       text-align: left;
-      margin: 80px auto 120px;
+      margin: 120px auto 115px;
       padding: 0 10px;
       font-size: 25px;
       line-height: 34px;
@@ -67,7 +67,7 @@
 
 .tile
   height: 150px;
-  background-color: #fff
+  //background-color: #fff
   text-align: center;
   box-sizing: border-box
   padding: 0
@@ -80,9 +80,10 @@
   @extend .col-full
   &:hover
     img
-      opacity: 1
+      opacity: 1;
+      filter: grayscale(0);
   &--dark
-    background-color: #eee
+    //background-color: #eee
   &--white-border
     border-left: 1px solid #fff
     border-right: 1px solid #fff
@@ -94,14 +95,15 @@
     @extend .col-md-4
     @extend .col-xs-12
     &--dark
-      background-color: #eee
+      //background-color: #eee
   img
     height: 100%
     padding: 10px 0
     box-sizing: border-box
     max-width: 100%
-    opacity: .6
-    //transition: opacity .1s
+    opacity: .6;
+    filter: grayscale(100%);
+    transform: scale(.5, .5);
   &--point
     text-align: center
     height: 150px
@@ -136,7 +138,7 @@
     padding: 0;
     text-align: center;
     padding-top: 75px;
-    border-left: 6px solid red; color: #444;
+    border-left: 6px solid red; color: #555;
     border-right: 1px solid #eee
     &__year
       display: block;
