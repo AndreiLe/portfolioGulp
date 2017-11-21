@@ -3,28 +3,53 @@
   &__more
     text-align: center
   &__more-btn
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 31px;
-    display: inline-block;
-    width: 300px;
-    margin: 15px 0;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+    display: block;
     background: #007cc3;
-    box-shadow: 0 2px #06c;
-    text-shadow: none;
+    padding: 60px 20px;
     &:hover, &:focus
       background: #06c;
-      font-size: 16px;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #fff;
+    span
+      display: inline-block
+      position: relative
+      border: none
+      padding-bottom: 4px
+      text-transform: uppercase
+      color: #fff
+      font-weight: 700
+      &:active, &:focus, &:hover
+        outline: 0
+        color: #fff
+      &:after
+        content: ''
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ1IDM0IiBoZWlnaHQ9IjM0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA0NSAzNCIgd2lkdGg9IjQ1cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwb2x5Z29uIGZpbGw9IiNmZmZmZmYiIHBvaW50cz0iMjQuOTk0LDMxLjcwNSAzNi45MDgsMjAgMCwyMCAwLDE1IDM2LjkwOCwxNSAyNC45OTQsMy4wMDYgMjcuODIyLDAuMjczIDQ1LDE3LjQ5OSAyNy44MjIsMzQuNjA1ICAgIi8+PC9zdmc+')
+        background-position: 0 0
+        background-repeat: no-repeat
+        background-size: 100% 100%
+        width: 16px
+        height: 12px
+        position: absolute
+        top: 5px
+        right: -28px
+        transition: all 0.4s cubic-bezier(0.35, 1, 0.33, 1)
+      &:before
+        content: ''
+        position: absolute
+        left: 0
+        bottom: 0
+        background: #fff
+        width: 0
+        height: 2px
+        transition: all 0.4s cubic-bezier(0.35, 1, 0.33, 1)
+    &:hover span
+      &:after
+        right: -35px
+      &:before
+        width: 100%
+
+@media only screen and (max-width: 767px)
+  .link-panel span:before, .link:before
+    width: 100%
+    background: #ffd300
 
 
 //all media
