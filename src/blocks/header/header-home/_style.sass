@@ -51,23 +51,48 @@
     margin-bottom: 5px;
     margin-left: 5px;
     display: block
-    color: #bbb
+    color: red
+    &:before
+      content: "";
+      display: block;
+      position: absolute;
+      top: -10px;
+      width: 100%;
+      height: 2px;
+      background-color: red;
     &:hover, &:focus, &:active
       color: red
       text-transform: uppercase;
       &:before
-        content: "";
-        display: block;
-        position: absolute;
-        top: -10px;
-        width: 100%;
-        height: 2px;
-        background-color: red;
+        content: ""
+    &--hide
+      margin-top: 58px;
+      text-align: left;
+      bottom: 0;
+      vertical-align: bottom;
+      text-transform: uppercase;
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      line-height: 15px;
+      margin-bottom: 5px;
+      margin-left: 5px;
+      display: block
+      color: #bbb
+      &:before
+        content: none
+
   &__logo 
     position: relative;
-    img
+    &-img
       filter: drop-shadow(1px 1px 1px black)
       width: 50px
+      &:hover
+        opacity: 1
+        filter: none !important;
+    &-img--hide
+      opacity: .3;
+      filter: grayscale(100%) !important;
+
   &__github 
     margin: 10px;
     color: #fff;
