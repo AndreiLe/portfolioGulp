@@ -41,10 +41,10 @@
       repeat: true,
       callbackFunction: function(elem, action){
         if (action === 'add') {
-          $('#header-home__logo-img').removeClass('hide-menu');
+          $('#header-home__logo-img').removeClass('hide-logo');
         }
         if (action === 'remove') {
-          $('#header-home__logo-img').addClass('hide-menu');
+          $('#header-home__logo-img').addClass('hide-logo');
         }
       },
     });
