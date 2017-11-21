@@ -1,5 +1,5 @@
 .footer-home
-  padding: 80px 10px 150px
+  padding: 80px 10px 0
   &__more
     text-align: center
   &__more-btn
@@ -45,12 +45,21 @@
         right: -35px
       &:before
         width: 100%
-
-@media only screen and (max-width: 767px)
-  .link-panel span:before, .link:before
-    width: 100%
-    background: #ffd300
-
+  &-copyright
+    text-align: center;
+    height: 150px;
+    &__span
+      line-height: 150px;
+      display: inline-block;
+      color: #8f8f8f;
+      text-transform: uppercase;
+      letter-spacing: 3px
+      padding: 0 5px
+    &__img
+      filter: grayscale(100%);
+      opacity: 0.3;
+      line-height: 150px;
+      vertical-align: middle;
 
 //all media
 @import "_media.sass"
