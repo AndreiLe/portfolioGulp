@@ -2,7 +2,28 @@
   padding: 40px 0 190px
   width: 100%
   position: relative
+  overflow-x: hidden
+  &:before
+    content: attr(data-letter);
+    font-family: "Open Sans",Helvetica,"Helvetica Neue",Arial,sans-serif;
+    position: absolute;
+    top: -110px;
+    right: 0;
+    font-size: 650px;
+    line-height: 650px;
+    font-weight: bolder;
+    background: linear-gradient(135deg,#eee 0%, whitesmoke 35%, whitesmoke 65%, #fff 80%);
+    -webkit-background-clip: text;
+    color: transparent;
+    pointer-events: none;
+    z-index: 1
+    opacity: .6
+    width: 320px
   &--dark
+    padding-bottom: 0
+  &--dark-wrap
+    width: 100%
+    position: relative
     padding-bottom: 40px;
     margin-bottom: 200px;
     &:before
@@ -142,7 +163,7 @@
       text-align: left;
       position: relative;
       padding-left: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       &:before
         content: "•";
         color: red;
