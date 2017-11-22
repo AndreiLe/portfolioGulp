@@ -4,10 +4,14 @@
 @@include('../assets/js/jquery.viewportchecker.js')
 //blazy.min.js
 @@include('../assets/js/blazy.min.js')
+//browser-detect.js
+@@include('../assets/js/browser-detect.js')
+
 
 //common.js
 ;(function() {
 
+  //lazyload img
   new Blazy();
 
   //smooth scroll to id
@@ -54,6 +58,19 @@
           $(menuId).addClass(removeClass).blur();
         }
       },
+    });
+  }
+
+  //fix background attacment fixed bug for ie
+  if (isIE || isEdge) {
+    $('body').on("mousewheel", function() {
+      // remove default behavior
+      event.preventDefault();
+
+      //scroll without smoothing
+      var wheelDelta = event.wheelDelta;
+      var currentScrollPosition = window.pageYOffset;
+      window.scrollTo(0, currentScrollPosition - wheelDelta);
     });
   }
 
