@@ -48,10 +48,10 @@
       repeat: true,
       callbackFunction: function(elem, action){
         if (action === 'add') {
-          $(menuId).removeClass(removeClass);
+          $(menuId).removeClass(removeClass).blur();
         }
         if (action === 'remove') {
-          $(menuId).addClass(removeClass);
+          $(menuId).addClass(removeClass).blur();
         }
       },
     });
