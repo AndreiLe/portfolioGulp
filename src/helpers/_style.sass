@@ -34,15 +34,20 @@ a, a:hover, a:active, a:focus
     overflow: hidden; // обязательно!
     display: block;
 
-.delay-0s0
+.animated
   opacity: 0 !important
-  animation-delay: 0.0s;
-.delay-1s0
-  opacity: 0 !important
-  animation-delay: 1s;
-.delay-1s6
-  opacity: 0 !important
-  animation-delay: 1.6s;
+
+@keyframes flashBefore
+  50%
+    opacity: 0
+  0%,100%
+    opacity: 1
+.flashBefore:before
+  animation-name: flashBefore !important
+  animation-duration: 0.6s !important
+  animation-fill-mode: none !important
+  animation-delay: 0.1s !important
+  animation-iteration-count: 2 !important
 
 .visible
   opacity: 1 !important

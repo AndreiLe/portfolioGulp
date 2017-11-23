@@ -82,6 +82,7 @@
 
   &__logo 
     position: relative;
+    z-index: 1
     &-img
       filter: drop-shadow(1px 1px 1px black)
       width: 50px
@@ -93,7 +94,7 @@
       filter: grayscale(100%) !important;
 
   &__github 
-    margin: 10px;
+    padding: 10px;
     color: #fff;
     white-space: nowrap;
     display: block;
@@ -116,7 +117,6 @@
     text-shadow: 1px 1px 2px #000, 0 0 16px red;
     margin-bottom: 50px;
     letter-spacing: 5px;
-    @extend .delay-1s0
     &--sub
       font-family: 'Open Sans',sans-serif;
       text-align: center;
@@ -126,7 +126,6 @@
       text-shadow: 1px 1px 1px #000, 5px 3px 5px #042e8f;
       letter-spacing: 2px;
       margin-top: 75px
-      @extend .delay-1s6
       
 
 

@@ -31,13 +31,20 @@
   });
 
   //animate by scroll
-  $(function() {
-    $('.animated').viewportChecker({
-      classToAdd: 'visible fadeIn',
-      offset: 100,
-      repeat: false
+    $('.animated').each(function(){
+      var $this = $(this);
+      var animate = $this.attr('animate') || 'fadeIn';
+      var delay = $this.attr('delay') || '.2s';
+      var duration = $this.attr('duration') || '1s';
+      var offset = $this.attr('offset') || '0';
+      this.style.setProperty('animation-delay', delay,'');
+      this.style.setProperty('animation-duration', duration,'');
+      $this.viewportChecker({
+        classToAdd: 'visible ' + animate,
+        offset: parseInt(offset),
+        repeat: false
+      });
     });
-  });
 
   //show by scroll
   showMenuItem('.header-home', '#header-home__logo-img','header-home__logo-img--hide');
