@@ -110,13 +110,18 @@
   &__h1
     font-family: 'Permanent Marker',cursive;
     text-align: center;
-    color: #f32a16;
+    color: #d90e26;
     font-size: 100px;
     line-height: 110px;
     transform: rotate(-8deg);
-    text-shadow: 1px 1px 2px #000, 0 0 16px red;
+    text-shadow: 5px 5px 2px #000;
     margin-bottom: 50px;
     letter-spacing: 5px;
+    overflow: visible;
+    &.header-neon
+      color: #fff6f6;
+      animation: header-h1-neon-animation 1.5s ease-in-out infinite alternate
+      animation-delay: 0s !important;
     &--sub
       font-family: 'Open Sans',sans-serif;
       text-align: center;
