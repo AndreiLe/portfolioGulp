@@ -33,10 +33,10 @@
   //animate by scroll
     $('.animated').each(function(){
       var $this = $(this);
-      var animate = $this.attr('animate') || 'fadeIn';
-      var delay = $this.attr('delay') || '.2s';
-      var duration = $this.attr('duration') || '1s';
-      var offset = $this.attr('offset') || '0';
+      var animate = $this.attr('data-animate') || 'fadeIn';
+      var delay = $this.attr('data-delay') || '.2s';
+      var duration = $this.attr('data-duration') || '1s';
+      var offset = $this.attr('data-offset') || '0';
       this.style.setProperty('animation-delay', delay,'');
       this.style.setProperty('animation-duration', duration,'');
       $this.viewportChecker({
