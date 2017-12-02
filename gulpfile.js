@@ -66,6 +66,24 @@ gulp.task('img-min', function () {
 });
 
 
+gulp.task('critical-css', function () {
+  var critical = require('critical');
+
+  critical.generate({
+      inline: true,
+      base: 'bin/',
+      src: 'index.html',
+      dest: 'index.html',
+      css: ['bin/style.min.css'],
+      minify: true,
+      width: 1300,
+      height: 900,
+      ignore: [/html body/,/url\(data:image\/gif;base64/]
+  });
+});
+
+
+
 gulp.task('browser-sync', function() {
 
     gulp.task('browser-sync', function() {
