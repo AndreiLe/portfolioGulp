@@ -9,7 +9,8 @@ bourbon = require('node-bourbon'),
 uglify = require('gulp-uglify'),
 browserSync = require('browser-sync').create(),
 tingpng = require('gulp-tinypng'),
-htmlmin = require('gulp-htmlmin');
+htmlmin = require('gulp-htmlmin'),
+wait = require('wait-stream');
 
 
 gulp.task('html-include', function() {
@@ -47,6 +48,7 @@ gulp.task('jscomm-include', function() {
 gulp.task('sass-main', function () {
   return gulp.src('src/*.sass')
   .pipe(plumber())
+  .pipe(wait(100))//prevent sass file unreadable error
   .pipe(sass({
     errLogToConsole: true,
     includePaths: [bourbon.includePaths, 'src/helpers/', 'assets/css/']
@@ -54,8 +56,8 @@ gulp.task('sass-main', function () {
   .pipe(rename({suffix: '.min', prefix : ''}))
   .pipe(cleanCSS())
   .pipe(plumber.stop())
-  .pipe(gulp.dest('bin/'))
-  .pipe(browserSync.stream());
+  .pipe(gulp.dest('bin/'));
+  // .pipe(browserSync.stream());
 });
 
 gulp.task('img-min', function () {
@@ -67,6 +69,14 @@ gulp.task('img-min', function () {
 
 
 gulp.task('critical-css', function () {
+  //1.add style.css to head for fast loading
+  //2. make all element visible
+  //html body 
+  //  opacity:1 !important
+  //3. turn off animations
+  //div.animated, span.animated, h1.animated, h2.animated, li.animated{
+  //     opacity: 1 !important;
+  // }
   var critical = require('critical');
 
   critical.generate({
@@ -78,7 +88,7 @@ gulp.task('critical-css', function () {
       minify: true,
       width: 1300,
       height: 900,
-      ignore: [/html body/,/url\(data:image\/gif;base64/]
+      ignore: [/url\(data:image\/gif;base64/]
   });
 });
 
@@ -97,15 +107,27 @@ gulp.task('browser-sync', function() {
 
 });
 
+var timer = null;
+function runBrowserSync() {
+    browserSync.reload();
+}
+
 gulp.task('watch', function() {
 
   gulp.watch(['src/**/*.html'], ['html-include']);
   gulp.watch(['src/**/*.js'], ['jscomm-include']);
   gulp.watch(['src/**/*.sass'], ['sass-main']);
-  gulp.watch('bin/**').on('change', browserSync.reload);
+  gulp.watch('bin/**').on('change', function (argument) {
+    //preventing frequent reloads if changed many files
+    if (timer) {
+        clearTimeout(timer);
+        timer = null;
+    }
+    timer = setTimeout(runBrowserSync, 1000);
+  });
 
 });
 
 gulp.task('default', ['browser-sync', 'watch'], function() {});
 
-gulp.task('init', ['img-min', 'html-include', 'jscomm-include', 'sass-main'], function() {});
+gulp.task('init', ['html-include', 'jscomm-include', 'sass-main','browser-sync', 'watch'], function() {});
