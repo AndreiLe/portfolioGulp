@@ -82,7 +82,7 @@
   }
 
   //add neon animation
-  $('.header-home__logo').hover(function() {
+  $('.header-home__github').hover(function() {
     $('.header-home__h1').removeClass('fadeIn').addClass('header-neon');
   }, function() {
     $('.header-home__h1').removeClass('header-neon');
