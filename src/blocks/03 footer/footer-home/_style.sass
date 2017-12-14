@@ -54,6 +54,8 @@
   &-copyright
     text-align: center;
     height: 150px;
+    display: flex;
+    justify-content: center
     &__span
       line-height: 150px;
       display: inline-block;
@@ -61,6 +63,12 @@
       text-transform: uppercase;
       letter-spacing: 3px
       padding: 0 5px
+      flex: 1;
+      display: flex;
+      flex-flow: column wrap;
+      max-width: 500px
+      &--center
+        flex: 0
     &__img
       filter: grayscale(100%);
       opacity: 0.3;
