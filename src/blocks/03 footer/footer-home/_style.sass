@@ -74,11 +74,60 @@
       &--center
         flex: 0
     &__img
-      filter: grayscale(100%);
-      opacity: 0.3;
+      // filter: grayscale(100%);
+      // opacity: 0.3;
       line-height: 150px;
       vertical-align: middle;
       height: 35px;
+
+  &__git
+  &__git-tile
+    @extend .col-xs-2
+    padding: 0;
+  &__git-tile-wrap
+    height: 270px;
+    line-height: 270px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0;
+    position: relative;
+    &:before
+      content: ''
+      display: inline-block
+      width: 1px
+      background-color: #eee;
+      height: 100%
+      position: absolute
+    &:hover, &:focus
+      .footer-home__git-menu-item
+        line-height: 20px;
+        color: #02084d
+        background-color: #fff;
+        font-size: 16px
+        font-weight: 300
+        text-transform: uppercase;
+  &__git-menu-item
+    position: absolute
+    bottom: 0
+    text-align: left;
+    vertical-align: bottom;
+    text-transform: uppercase;
+    transform-origin: left top;
+    line-height: 20px;
+    color: #bbb;
+    display: inline-block;
+    background-color: #fff;
+    transform: translate(-10px,100%) rotate(-90deg);
+    font-size: 16px
+    font-weight: 300
+    white-space: nowrap
+  &__git-menu-link
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    z-index: 1
 
 //all media
 @import "_media.sass"
